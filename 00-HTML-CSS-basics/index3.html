@@ -21,6 +21,50 @@
 	<audio controls>
 	  	<source src="media/audio/Alborosie.mp3" type="audio/mpeg">
 		Your browser does not support the audio element.
-	</audio> 
+	</audio>
+	<br><br>
+	<form id="sign-up" action="?" method="post">
+		<fieldset>
+			<legend>Sign up</legend>
+			<p>
+				<label>First Name: </label>
+				<input type="text" name="first-name" required>
+			</p>
+			<br>
+			<p>
+				<label>Last Name: </label>
+				<input type="text" name="last-name" required>
+			</p>
+			<br>
+			<p>
+				<label>Email: </label>
+				<input type="email" name="email" required>
+			</p>
+			<br>
+			<p>
+				<label>Birthday: </label>
+				<input type="date" name="birthday" required>
+			</p>
+			<br>
+			<p>
+				<label>Choose your favourite sport:</label>
+				<select name="choose-sport" id="choose-sport" required>
+					<option value="Football">Football</option>
+					<option value="Tenis">Tenis</option>
+					<option value="Surf">Surf</option>
+				</select>
+			</p>
+			<br>
+			<p>
+				<label>Description about yourself:</label><br>
+				<textarea name="bio" id="bio" rows="5" cols="30" required></textarea>
+			</p>
+		 	<br>
+		 	<p>
+		 		<button>Submit</button>
+		 		<button type="reset">Reset form</button>
+		 	</p>
+		</fieldset>
+	</form>
 </body>
 </html>
