@@ -33,17 +33,17 @@
 			<legend>Sign up</legend>
 			<p>
 				<label>First Name: </label>
-				<input type="text" name="first-name" required>
+				<input type="text" name="first-name" placeholder="e.g. Juan" required>
 			</p>
 			<br>
 			<p>
 				<label>Last Name: </label>
-				<input type="text" name="last-name" required>
+				<input type="text" name="last-name" placeholder="e.g. Perez" required>
 			</p>
 			<br>
 			<p>
 				<label>Email: </label>
-				<input type="email" name="email" required>
+				<input type="email" name="email" placeholder="e.g. myemail@gmail.com" required>
 			</p>
 			<br>
 			<p>
@@ -54,6 +54,7 @@
 			<p>
 				<label>Choose your favourite sport:</label>
 				<select name="choose-sport" id="choose-sport" required>
+					<option value="">-- Open this list --</option>
 					<option value="Football">Football</option>
 					<option value="Tenis">Tenis</option>
 					<option value="Surf">Surf</option>
@@ -62,7 +63,7 @@
 			<br>
 			<p>
 				<label>Description about yourself:</label><br>
-				<textarea name="bio" id="bio" rows="5" cols="30" required></textarea>
+				<textarea name="bio" id="bio" rows="5" cols="30" placeholder="My bio starts here..." required></textarea>
 			</p>
 		 	<br>
 		 	<p>
