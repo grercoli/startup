@@ -4,6 +4,7 @@ html {
   box-sizing: border-box;
   font-family: 'Roboto', sans-serif;
   font-size: 14px;
+  font-weight: bold!important;
 }
 
 *,
@@ -12,28 +13,15 @@ html {
   box-sizing: inherit;
 }
 
-.general-container {
-	margin: 0 auto;
-	width: 1200px;
-}
-
 /** MAIN HEADER **/
 
-.main-header {
-	background-color: #222;
+.header {
+	background-color: magenta;
 	color: #fff;
+	font-size: 46px;
 	padding: 20px 0;
-}
-
-.main-header h1 {
 	text-align: center;
 	text-transform: uppercase;
-}
-
-.main-header .introduction-text {
-	margin: 0 auto;
-	padding-bottom: 10px;
-	width: 50%;
 }
 
 /** MAIN CONTENT**/
@@ -42,36 +30,33 @@ html {
 	margin-top: 20px;
 }
 
-.main-nav {
-	background-color: rgb(128, 128, 128);
+.navigation {
+	background-color: blue;
 	float: left;
+	font-size: 12px;
 	margin: 0 1%;
 	padding: 0 10px 10px 10px;
 	width: 15%;
 }
 
-.main-nav a {
+.navigation a {
 	color: #fff;
 	display: block;
-	font-size: 1em;
 	font-weight: bold;
 	text-decoration: none;
 }
 
-.main-nav ul li {
-	margin: 5px 0;
-	text-align: left;
-}
-
-.main-section {
+.content {
 	float: left;
+	font-size: 14px;
 	margin: 0 1%;
 	width: 60%;
 }
 
-.main-aside {
-	background-color: rgb(192, 192, 192);
+.sidebar {
+	background-color: magenta;
 	float: left;
+	font-size: 10px;
 	margin: 0 1%;
 	padding: 0 10px;
 	width: 19%;
@@ -79,16 +64,17 @@ html {
 
 /** FOOTER **/
 
-.main-footer {
-	background-color: #222;
+.footer {
+	background-color: magenta;
 	bottom: 0;
 	color: #fff;
+	font-size: 10px;
 	margin-top:30px;
 	position: fixed;
 	width: 100%;
 }
 
-footer .copyright {
+.footer .copyright {
 	padding: 20px 0;
     text-align: center;
 }
