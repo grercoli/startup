@@ -1,0 +1,106 @@
+/** GLOBAL CLASSES **/
+/* apply a natural box layout model to all elements, but allowing components to change */
+html {
+  box-sizing: border-box;
+  font-family: 'Roboto', sans-serif;
+  font-size: 14px;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+.general-container {
+	margin: 0 auto;
+	width: 1200px;
+}
+
+/** MAIN HEADER **/
+
+.main-header {
+	background-color: #222;
+	color: #fff;
+	padding: 20px 0;
+}
+
+.main-header h1 {
+	text-align: center;
+	text-transform: uppercase;
+}
+
+.main-header .introduction-text {
+	margin: 0 auto;
+	padding-bottom: 10px;
+	width: 50%;
+}
+
+/** MAIN CONTENT**/
+
+.main-container {
+	margin-top: 20px;
+}
+
+.main-nav {
+	background-color: rgb(128, 128, 128);
+	float: left;
+	margin: 0 1%;
+	padding: 0 10px 10px 10px;
+	width: 15%;
+}
+
+.main-nav a {
+	color: #fff;
+	display: block;
+	font-size: 1em;
+	font-weight: bold;
+	text-decoration: none;
+}
+
+.main-nav ul li {
+	margin: 5px 0;
+	text-align: left;
+}
+
+.main-section {
+	float: left;
+	margin: 0 1%;
+	width: 60%;
+}
+
+.main-aside {
+	background-color: rgb(192, 192, 192);
+	float: left;
+	margin: 0 1%;
+	padding: 0 10px;
+	width: 19%;
+}
+
+/** FOOTER **/
+
+.main-footer {
+	background-color: #222;
+	bottom: 0;
+	color: #fff;
+	margin-top:30px;
+	position: fixed;
+	width: 100%;
+}
+
+footer .copyright {
+	padding: 20px 0;
+    text-align: center;
+}
+
+/** HELPER CLASSES**/
+
+.clearfix:before,
+.clearfix:after {
+    content: " "; /* 1 */
+    display: table; /* 2 */
+}
+
+.clearfix:after {
+    clear: both;
+}
