@@ -1,0 +1,107 @@
+/** GLOBAL **/
+/* apply a natural box layout model to all elements, but allowing components to change */
+html {
+  box-sizing: border-box;
+  font-family: 'Roboto', sans-serif;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+ul {
+	list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+	margin: 0 auto;
+	width: 98%;
+}
+
+/** HELPER CLASSES**/
+
+.clearfix:before,
+.clearfix:after {
+    content: " "; /* 1 */
+    display: table; /* 2 */
+}
+
+.clearfix:after {
+    clear: both;
+}
+
+/** HEADER **/
+
+.introduction {
+	margin-bottom: 60px;
+}
+
+.site-title {
+	float: left;
+	font-weight: bold;
+	padding-left: 20px;
+	width: 30%;
+}
+
+.site-information {
+	float: right;
+	padding: 0 200px 0 20px;
+	width: 70%;
+}
+
+.site-information p span {
+	font-weight: bold;
+}
+
+/** ALBUMS **/
+
+.albums-list li {
+	float: left;
+	padding: 10px;
+	width: 33.3%;
+}
+
+.album {
+	position: relative;
+}
+
+.screen {
+	background-color: rgba(0,0,0,0.5);
+	left: 0;
+	top: 0;
+	height: 100%;
+	width: 100%;
+	position: absolute;
+	opacity: 0;
+	z-index: 1000;
+  	-webkit-transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
+    -o-transition: all 0.3s ease-in-out;
+    -ms-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+}
+
+.screen:hover {
+	opacity: 1;
+}
+
+.title {
+	color: #fff;
+	font-size: 1.2em;
+  	font-weight: bold;
+  	margin-left: 10px;
+  	-webkit-transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
+    -o-transition: all 0.3s ease-in-out;
+    -ms-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+}
+
+.album img {
+	width: 420px;
+}
+
