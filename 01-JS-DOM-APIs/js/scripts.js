@@ -13,7 +13,7 @@
 
 		//Displays an alert when button is clicked
 		let btnClickMe = document.querySelector('#click-me');
-		btnClickMe.addEventListener('click', showAlertMessage);
+		btnClickMe.addEventListener('click', loadContent);
 
 		//Function to fetch data from http://api.icndb.com/jokes/random
 		function loadContent() {
