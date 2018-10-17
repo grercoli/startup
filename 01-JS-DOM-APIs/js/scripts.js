@@ -22,7 +22,8 @@
 					return response.json();
 				})
 				.then(function(data) {
-					console.log(data);
+					let html = `ID: ${data.value.id} <br> JOKE: ${data.value.joke}`;
+					document.querySelector('#jokes').innerHTML = html;
 				});
 		}
 
