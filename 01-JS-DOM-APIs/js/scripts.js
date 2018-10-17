@@ -15,5 +15,16 @@
 		let btnClickMe = document.querySelector('#click-me');
 		btnClickMe.addEventListener('click', showAlertMessage);
 
+		//Function to fetch data from http://api.icndb.com/jokes/random
+		function loadContent() {
+			fetch('http://api.icndb.com/jokes/random')
+				.then(function(response) {
+					return response.json();
+				})
+				.then(function(data) {
+					console.log(data);
+				});
+		}
+
 	}); //DOM CONTENT LOADED
 })();
