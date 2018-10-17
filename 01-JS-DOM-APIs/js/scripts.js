@@ -1,23 +1,19 @@
 (function() {
 	"use strict";
 
-	document.addEventListener('DOMContentLoaded', function(){
+	document.addEventListener('DOMContentLoaded', function() {
 		
-		//Fade in section
-		document.querySelector('.is-hidden').classList.add('not-hidden');
+		//Hidden section with fade in effect
+		document.querySelector('.is-hidden').classList.add('fadein');
 
 		//Function to display an alert
-		function showAlertMessage(){
+		function showAlertMessage() {
 			alert('This is an alert message!');
 		}
 
-		showAlertMessage();
-
-		//Displays an alert with button is clicked
+		//Displays an alert when button is clicked
 		let btnClickMe = document.querySelector('#click-me');
-		btnClickMe.addEventListener('click', function() {
-			showAlertMessage();
-		});
+		btnClickMe.addEventListener('click', showAlertMessage);
 
 	}); //DOM CONTENT LOADED
 })();
