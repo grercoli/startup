@@ -11,6 +11,6 @@ section {
             transition: opacity 2s ease-in;
 }
 
-.not-hidden {
+.fadein {
 	opacity: 1;
 }
