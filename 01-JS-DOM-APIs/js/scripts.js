@@ -1,10 +1,12 @@
+/*jshint esversion: 6 */
+
 (function() {
 	"use strict";
 
 	document.addEventListener('DOMContentLoaded', function() {
 		
 		//Hidden section with fade in effect
-		document.querySelector('.is-hidden').classList.add('fadein');
+		document.querySelector('.hidden-section').classList.add('fadein');
 
 		//Function to display an alert
 		function showAlertMessage() {
@@ -15,16 +17,20 @@
 		let btnClickMe = document.querySelector('#click-me');
 		btnClickMe.addEventListener('click', loadContent);
 
-		//Function to fetch data from http://api.icndb.com/jokes/random
+		//Function to load content from Rest Api
 		function loadContent() {
-			fetch('http://api.icndb.com/jokes/random')
-				.then(function(response) {
-					return response.json();
-				})
-				.then(function(data) {
+			let xhr = new XMLHttpRequest();
+
+			xhr.open('GET', 'http://api.icndb.com/jokes/random', true);
+			xhr.onreadystatechange = function () {
+				if(xhr.readyState === 4 && xhr.status === 200){
+					let data = JSON.parse(xhr.responseText);
 					let html = `ID: ${data.value.id} <br> JOKE: ${data.value.joke}`;
 					document.querySelector('#jokes').innerHTML = html;
-				});
+				}
+			}
+
+			xhr.send();
 		}
 
 	}); //DOM CONTENT LOADED
