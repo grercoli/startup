@@ -2,7 +2,7 @@ section {
 	text-align: center;
 }
 
-.is-hidden {
+.hidden-section {
 	opacity: 0;
 	-webkit-transition: opacity 2s ease-in;
        -moz-transition: opacity 2s ease-in;
