@@ -29,7 +29,7 @@
 					}
 				};
 				
-				xhr.onerror = function (){
+				xhr.onerror = function () {
 					reject(Error('There was a network error'));
 				};
 
@@ -38,7 +38,7 @@
 		}
 
 		//Function to load jokes from Rest Api: http://api.icndb.com/jokes/random
-		function loadJokes(){
+		function loadJokes() {
 			let config = {
 				method : 'GET',
 				url : 'http://api.icndb.com/jokes/random'
@@ -49,7 +49,7 @@
 					let html = `ID: ${data.value.id} <br> JOKE: ${data.value.joke}`;
 					document.querySelector('#jokes').innerHTML = html;
 				})
-				.catch(function(error){
+				.catch(function(error) {
 					jokesSection.classList.add('red-content');
 					jokesSection.innerHTML = error;
 				});
@@ -58,6 +58,25 @@
 		//Displays jokes (rest api content) when button is clicked
 		let btnClickMe = document.querySelector('#click-me');
 		btnClickMe.addEventListener('click', loadJokes);
+
+		//Function to load content with a specific parameter
+		function loadWithParameter(param) {
+			let config = {
+				method : 'GET',
+				url : ' https://api.github.com/search/repositories?q=' + param
+			}
+
+			loadContent(config)
+				.then(function(data) {
+					console.log(data);
+				})
+				.catch(function(error){
+					console.log(error);
+				});
+		}
+
+		//Call function loadWithParameter with 'Javascript' as param
+		loadWithParameter('Javascript');
 
 	}); //DOM CONTENT LOADED
 })();
