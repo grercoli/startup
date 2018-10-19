@@ -14,3 +14,10 @@ section {
 .fadein {
 	opacity: 1;
 }
+
+.red-content {
+	background-color: red;
+	color: #fff;
+	font-size: 20px;
+	font-weight: bold;
+}
