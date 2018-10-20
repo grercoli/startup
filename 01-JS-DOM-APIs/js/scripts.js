@@ -6,6 +6,7 @@
 	document.addEventListener('DOMContentLoaded', function() {
 		
 		let jokesSection = document.querySelector('#jokes');
+		let repoList = document.querySelector('#repositories-list');
 
 		//Hidden section with fade in effect
 		document.querySelector('.hidden-section').classList.add('fadein');
@@ -68,7 +69,17 @@
 
 			loadContent(config)
 				.then(function(data) {
-					console.log(data);
+					const items = data.items;
+					let htmlList = `<h2>Javascript repositorie's list</h2>`;
+					htmlList += `<ul class="items-list">`;
+					
+					items.forEach(function(item) {
+						htmlList += `<li>${item.url}</li>`;
+					})
+					
+					htmlList += `<ul>`;
+					repoList.innerHTML = htmlList;
+
 				})
 				.catch(function(error){
 					console.log(error);
