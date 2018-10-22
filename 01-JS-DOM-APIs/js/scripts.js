@@ -1,9 +1,9 @@
 /*jshint esversion: 6 */
 
-(function() {
+/*(function() {
 	"use strict";
 
-	document.addEventListener('DOMContentLoaded', function() {
+	document.addEventListener('DOMContentLoaded', function() {*/
 		
 		let jokesSection = document.querySelector('#jokes');
 		let repoList = document.querySelector('#repositories-list');
@@ -70,7 +70,7 @@
 			loadContent(config)
 				.then(function(data) {
 					const items = data.items;
-					let htmlList = `<h2>Javascript repositorie's list</h2>`;
+					let htmlList = `<h2>${param} repositorie's list</h2>`;
 					htmlList += `<ul class="items-list">`;
 					
 					items.forEach(function(item) {
@@ -79,7 +79,6 @@
 					
 					htmlList += `<ul>`;
 					repoList.innerHTML = htmlList;
-
 				})
 				.catch(function(error){
 					console.log(error);
@@ -89,5 +88,42 @@
 		//Call function loadWithParameter with 'Javascript' as param
 		loadWithParameter('Javascript');
 
-	}); //DOM CONTENT LOADED
-})();
+		const searchInput = document.querySelector('#search');
+
+		//When user writes a repositorie and click outside the input, a search is performed with that value
+		searchInput.addEventListener('blur', function(){
+			loadWithParameter(searchInput.value);
+		});
+
+		/*function matrixTable(matrix) {
+			let htmlBody = document.querySelector('.container').parentElement;
+			let newTable = document.createElement('table');
+			//console.log(matrix);
+			for(let x = 0; x < 4; x++) {
+				let newTr = document.createElement('tr');
+
+				for(let y = 0; y < 4; y++) {
+					if(x = 0){
+						let newTh = document.createElement('th');
+						let textTh = document.createTextNode(matrix[x][y]);
+						newTh.appendChild(textTh);
+						newTr.appendChild(newTh);
+					} else {
+						let newTd = document.createElement('td');
+						let textTd = document.createTextNode(matrix[x][y]);
+						newTd.appendChild(textTd);
+						newTr.appendChild(newTd);
+					}
+				}
+				newTable.appendChild(newTr);
+			}
+			htmlBody.appendChild(newTable);
+		}
+
+		matrixTable( [['Nombre', 'Apellido', 'Telefono', 'Direccion'],
+					 ['Juan', 'Perez', '479-2234', 'Roca 2020'],
+					 ['Pedro', 'Rodriguez', '471-4434', 'Belgrano 3020'],
+					 ['Martin', 'Castolo', '495-0535', 'Guemes 4020']] );*/
+
+	//}); //DOM CONTENT LOADED
+//})();
