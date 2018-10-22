@@ -34,3 +34,8 @@ main aside {
 	vertical-align: top;
 	margin-left: 1%;
 }
+
+.matrixTable th, td {
+	border: 1px solid #000;
+	padding: .3em;
+}
