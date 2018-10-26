@@ -1,5 +1,12 @@
 /* jshint esversion: 6 */
 
+class Actor {
+	constructor(name, age) {
+		this.name = name;
+		this.age = age;
+	}
+}
+
 class Movie {
 	constructor(name, year, duration) {
 		this.title = name;
