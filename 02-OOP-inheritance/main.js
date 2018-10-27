@@ -1,8 +1,18 @@
 /* jshint esversion: 6 */
 
-class EventEmitter {
+class Logger {
 	constructor() {
 
+	}
+
+	log(info) {
+		console.log(info);
+	}
+}
+
+class EventEmitter extends Logger {
+	constructor() {
+		super();
 	}
 
 	on(video, eventName, callback) {
@@ -12,7 +22,10 @@ class EventEmitter {
 	emit(eventName, video) {
 		switch(eventName){
 			case 'play': 
-				this.on(video, 'play', () => console.log('Playing movie') );
+				this.on(video, 'play', () => {
+					this.log('The play event has been emitted');
+					console.log('Playing movie'); 
+				});
 				break;
 			case 'pause':
 				this.on(video, 'pause', () => console.log('Movie has been paused') );
