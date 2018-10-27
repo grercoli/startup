@@ -44,6 +44,7 @@ class Movie extends EventEmitter {
 		this.year = year;
 		this.duration = duration;
 		this.video = video;
+		this.actors = [];
 	}
 
 	play() {
@@ -57,6 +58,16 @@ class Movie extends EventEmitter {
 	resume() {
 		this.emit('resume', this.video);
 	}
+
+	addCast(cast) {
+		if(Array.isArray(cast)){
+			cast.forEach( (actor) => {
+				this.actors.push(actor);
+			});
+		} else {
+			this.actors.push(cast);
+		}
+	}
 }
 
 let exampleVid = document.getElementById('dub-video');
@@ -66,3 +77,17 @@ console.log(movie1.title);
 movie1.play();
 movie1.pause();
 movie1.resume();
+
+const dylan = new Actor('Dylan O Brien', 27);
+
+movie1.addCast(dylan);
+
+const actorsArray = [
+	new Actor('Will Poulter', 30),
+	new Actor('Ki Hong Lee ', 25),
+	new Actor('Kaya Scodelario', 28)
+];
+
+movie1.addCast(actorsArray);
+
+console.log(movie1.actors);
