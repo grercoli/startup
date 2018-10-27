@@ -37,8 +37,9 @@ class Actor {
 	}
 }
 
-class Movie {
+class Movie extends EventEmitter {
 	constructor(name, year, duration, video) {
+		super();
 		this.title = name;
 		this.year = year;
 		this.duration = duration;
@@ -46,18 +47,22 @@ class Movie {
 	}
 
 	play() {
-		
+		this.emit('play', this.video);
 	}
 
 	pause() {
-		
+		this.emit('pause', this.video);
 	}
 
 	resume() {
-		
+		this.emit('resume', this.video);
 	}
 }
 
 let exampleVid = document.getElementById('dub-video');
 const movie1 = new Movie('The Maze Runner', 2014, 113, exampleVid);
 console.log(movie1.title);
+
+movie1.play();
+movie1.pause();
+movie1.resume();
