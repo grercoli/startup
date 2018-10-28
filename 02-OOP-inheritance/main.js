@@ -50,6 +50,15 @@ class Actor {
 	}
 }
 
+let social = {
+	share(friendName) {
+		console.log(`${friendName} shares ${this.title}`);
+	},
+	like(friendName) {
+		console.log(`${friendName} likes ${this.title}`);
+	}
+}
+
 class Movie extends EventEmitter {
 	constructor(name, year, duration, video) {
 		super();
@@ -84,6 +93,10 @@ class Movie extends EventEmitter {
 }
 
 let exampleVid = document.getElementById('dub-video');
+
+//"Movie" class now have "social" object methods
+Object.assign(Movie.prototype, social);
+
 const movie1 = new Movie('The Maze Runner', 2014, 113, exampleVid);
 console.log(movie1.title);
 
@@ -91,10 +104,11 @@ movie1.play();
 movie1.pause();
 movie1.resume();
 
+//Add one actor to movie1
 const dylan = new Actor('Dylan O Brien', 27);
-
 movie1.addCast(dylan);
 
+//Add an array of actors to movie1
 const actorsArray = [
 	new Actor('Will Poulter', 30),
 	new Actor('Ki Hong Lee ', 25),
@@ -104,3 +118,7 @@ const actorsArray = [
 movie1.addCast(actorsArray);
 
 console.log(movie1.actors);
+
+//Calling "social" object methods
+movie1.share('Gustavo');
+movie1.like('Gustavo');
