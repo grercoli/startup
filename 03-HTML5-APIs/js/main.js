@@ -113,4 +113,38 @@ document.addEventListener('DOMContentLoaded', () => {
 	function dragLeaveHandler() {
 		randomText.classList.remove('drag-over');
 	}
+
+	/** WEB SOCKETS **/
+
+	let wsUri = "wss://echo.websocket.org/",
+		wsInput = document.getElementById('ws-input'),
+		wsOutput = document.getElementById('ws-output'),
+		btnSend = document.getElementById('btn-send');
+	
+	btnSend.addEventListener('click', testWebSocket);
+	
+	function testWebSocket(event) {
+		event.preventDefault();
+
+	    let websocket = new WebSocket(wsUri);
+
+	    websocket.onopen = (e) => { 
+	    	wsOutput.innerHTML += `CONNECTED<br>`;
+    		websocket.send(wsInput.value);
+    		wsOutput.innerHTML += `<b>SEND:</b> ${wsInput.value}<br>`;
+	    }
+
+	    websocket.onclose = (e) => {
+	    	wsOutput.innerHTML += `DISCONNECTED<br>`;
+	    }
+
+	    websocket.onmessage = (e) => {
+	    	wsOutput.innerHTML += `<b>RESPONSE:</b> ${e.data}<br>`;
+    		websocket.close();
+	    }
+
+	    websocket.onerror = (e) => {
+	    	wsOutput.innerHTML += `<b>ERROR:</b> ${e.data}<br>`;
+	    }
+	}
 });
