@@ -9,6 +9,7 @@
 	<title>HTML5 APIs</title>
 </head>
 <body>
+	<h2>LocalStorage and IndexedDB</h2>
 	<form>
 		<label for="random-text">Write something:</label>
 		<br>
@@ -18,6 +19,18 @@
 	</form>
 	<br>
 	<button id="btn-delete">Delete data</button>
+	<hr>
+	<h2>WebSockets</h2>
+	<form>
+		<label for="ws-input">Write something:</label>
+		<br>
+		<textarea name="ws-input" id="ws-input" cols="30" rows="5"></textarea>
+		<br>
+		<button id="btn-send" type="submit">Send</button>
+	</form>
+	<br>
+	<div id="ws-output"></div>
+
 	<script src="js/main.js"></script>
 </body>
 </html>
