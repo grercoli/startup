@@ -3,7 +3,8 @@
 let DB;
 
 const form = document.querySelector('form'),
-	  randomText = document.querySelector('#random-text');
+	  randomText = document.querySelector('#random-text'),
+	  btnDelete = document.querySelector('#btn-delete');
 
 document.addEventListener('DOMContentLoaded', () => {
 	//Create "texts" db
@@ -60,5 +61,21 @@ document.addEventListener('DOMContentLoaded', () => {
 		transaction.onerror = () => {
 			console.log('There was an error');
 		}
+	}
+
+	btnDelete.addEventListener('click', deleteData);
+
+	function deleteData(e) {
+		//Delete all from local storage
+		localStorage.clear();
+
+		//Delete all from IndexedDB
+		let transaction = DB.transaction(['texts'], 'readwrite');
+		let objectStore = transaction.objectStore('texts');
+		let query = objectStore.clear();
+
+		query.onsuccess = (e) => {
+	    	console.log('Data deleted succesfully');
+  		};
 	}
 });
