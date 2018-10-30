@@ -52,6 +52,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 		query.onsuccess = () => {
 			form.reset();
+			randomText.innerHTML = "";
 		}
 
 		transaction.oncomplete = () => {
@@ -77,5 +78,39 @@ document.addEventListener('DOMContentLoaded', () => {
 		query.onsuccess = (e) => {
 	    	console.log('Data deleted succesfully');
   		};
+	}
+
+	/** DRAG AND DROP **/
+
+	randomText.addEventListener('dragover', dragOverHandler);
+	randomText.addEventListener('dragleave', dragLeaveHandler);
+	randomText.addEventListener('drop', dropHandler);
+
+	function dropHandler(e) {
+		randomText.classList.remove('drag-over');
+		console.log('File(s) dropped');
+
+		e.preventDefault();
+
+	    let file = e.dataTransfer.files[0],
+	        reader = new FileReader();
+
+	    reader.readAsText(file);
+
+	    reader.onload = function(event) {
+	        //console.log(event.target);
+	        randomText.innerHTML = event.target.result;
+	    };
+	    //console.log(file);
+
+	    return false;
+	}
+
+	function dragOverHandler() {
+		randomText.classList.add('drag-over');
+	}
+
+	function dragLeaveHandler() {
+		randomText.classList.remove('drag-over');
 	}
 });
