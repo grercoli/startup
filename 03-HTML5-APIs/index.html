@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="description" content="Exercise for HTML5Apis">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="css/styles.css">
+	<title>HTML5 APIs</title>
+</head>
+<body>
+	<h2>LocalStorage and IndexedDB</h2>
+	<form>
+		<label for="random-text">Write something:</label>
+		<br>
+		<textarea name="random-text" id="random-text" cols="30" rows="10"></textarea>
+		<br>
+		<button id="btn-save" type="submit">Save</button>
+	</form>
+	<br>
+	<button id="btn-delete">Delete data</button>
+	<hr>
+	<h2>WebSockets</h2>
+	<form>
+		<label for="ws-input">Write something:</label>
+		<br>
+		<textarea name="ws-input" id="ws-input" cols="30" rows="5"></textarea>
+		<br>
+		<button id="btn-send" type="submit">Send</button>
+	</form>
+	<br>
+	<div id="ws-output"></div>
+
+	<script src="js/main.js"></script>
+</body>
+</html>
