@@ -34,4 +34,30 @@ document.addEventListener('DOMContentLoaded', function() {
 
 	    return `rgb(${r}, ${g}, ${b})`;
 	}
+
+	/** SECOND CANVAS**/
+
+	let secondCanvas = document.querySelector('#second-canvas'),
+		ctx2 = secondCanvas.getContext("2d"),
+		x = 10,
+		y = 40,
+		dx = 2,
+		dy = 0;
+
+	ctx2.font = "18px Arial";
+	
+	setInterval(draw, 10);
+
+	function drawBall() {
+		ctx2.fillText("Start!",0,20);
+		ctx2.fillText("Finish!",740,20);
+	    ctx2.fillRect(x,y,150,75);
+	}
+
+	function draw() {
+    	ctx2.clearRect(0, 0, 800, 300);
+	    drawBall();
+	    x += dx;
+	    y += dy;
+	}
 });
