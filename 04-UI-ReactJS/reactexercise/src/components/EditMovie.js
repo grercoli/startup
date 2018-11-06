@@ -1,5 +1,9 @@
 import React, { Component } from 'react';
 
+//REDUX
+import { connect } from 'react-redux';
+import { editMovie } from '../actions/moviesActions';
+
 class EditMovie extends Component {
 	newNameRef = React.createRef();
 
@@ -12,8 +16,8 @@ class EditMovie extends Component {
 			id,
 			name: this.newNameRef.current.value
 		}
-
-		this.props.editMovie(movie, id);
+		
+		this.props.editMovie(movie);
 
 		this.props.changeState();
 	}
@@ -31,4 +35,8 @@ class EditMovie extends Component {
 	}
 }
 
-export default EditMovie;
+const mapStateToProps = state => ({ //helps read the state
+    movies: state.movies.movies
+})
+
+export default connect(mapStateToProps, {editMovie}) (EditMovie);

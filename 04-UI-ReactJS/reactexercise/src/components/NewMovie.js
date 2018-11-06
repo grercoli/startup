@@ -1,12 +1,15 @@
 import React, { Component } from 'react';
 import uuid from 'uuid';
 
+//REDUX
+import { connect } from 'react-redux';
+import { addMovie } from '../actions/moviesActions';
+
 class NewMovie extends Component {
 	
 	//Create input of form
 	nameRef = React.createRef();
 
-	//Call function newMovie
 	newMovie = (e) => {
 		e.preventDefault();
 
@@ -16,8 +19,7 @@ class NewMovie extends Component {
 			name: this.nameRef.current.value
 		}
 		
-		//Send data to principal component (App)
-		this.props.createMovie(movie);
+		this.props.addMovie(movie);
 
 		e.currentTarget.reset();
 	}
@@ -35,4 +37,8 @@ class NewMovie extends Component {
 	}
 }
 
-export default NewMovie;
+const mapStateToProps = state => ({ //helps read the state
+    movies: state.movies.movies
+})
+
+export default connect(mapStateToProps, {addMovie}) (NewMovie);

@@ -1,7 +1,15 @@
 import React, { Component } from 'react';
 import Movie from './Movie';
 
+//REDUX
+import { connect } from 'react-redux';
+import { getMovies } from '../actions/moviesActions';
+
 class ListMovies extends Component {
+
+	componentDidMount() {
+        this.props.getMovies();
+    }
 	
 	render() {
 		return (
@@ -11,8 +19,6 @@ class ListMovies extends Component {
 					<Movie 
 						key = {movie}
 						info = {this.props.movies[movie]}
-						editMovie = {this.props.editMovie}
-						deleteMovie = {this.props.deleteMovie}
 					/>
 				))}
 			</div>
@@ -20,4 +26,8 @@ class ListMovies extends Component {
 	}
 }
 
-export default ListMovies;
+const mapStateToProps = state => ({
+    movies: state.movies.movies
+})
+
+export default connect(mapStateToProps, {getMovies}) (ListMovies);

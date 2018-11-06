@@ -1,6 +1,10 @@
 import React, { Component } from 'react';
 import EditMovie from './EditMovie';
 
+//REDUX
+import { connect } from 'react-redux';
+import { deleteMovie } from '../actions/moviesActions';
+
 class Movie extends Component {
 
 	state = {
@@ -38,11 +42,11 @@ class Movie extends Component {
 				<button className="editBtn" onClick={this.editMovie}>Edit</button>
 				<button onClick={this.deleteMovie}>Delete</button>
 
-				{ editStatus ? <EditMovie info={this.props.info} changeState={this.changeState} editMovie={this.props.editMovie}/> : ''}
+				{ editStatus ? <EditMovie info={this.props.info} changeState={this.changeState} /> : ''}
 			</li>
 			</React.Fragment>
 		);
 	}
 }
 
-export default Movie;
+export default connect(null, {deleteMovie}) (Movie);
