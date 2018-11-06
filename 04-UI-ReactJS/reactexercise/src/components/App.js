@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Header from './Header';
 import NewMovie from './NewMovie';
+import ListMovies from './ListMovies';
 
 class App extends Component {
 
@@ -29,6 +30,10 @@ class App extends Component {
 
         <NewMovie 
           createMovie = {this.createMovie}
+        />
+
+        <ListMovies 
+          movies = {this.state.movies}
         />
 
       </div>
