@@ -33,6 +33,17 @@ class App extends Component {
     })
   }
 
+  deleteMovie = (id) => {
+    const currentMovies = [...this.state.movies];
+    
+    //Search for id to delete and exclude from array
+    const movies = currentMovies.filter(movie => movie.id !== id);
+
+    this.setState({
+      movies
+    })
+  }
+
   render() {
     return (
       <div>
@@ -48,6 +59,7 @@ class App extends Component {
         <ListMovies 
           movies = {this.state.movies}
           editMovie = {this.editMovie}
+          deleteMovie = {this.deleteMovie}
         />
 
       </div>

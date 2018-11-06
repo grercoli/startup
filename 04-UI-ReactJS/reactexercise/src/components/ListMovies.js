@@ -12,6 +12,7 @@ class ListMovies extends Component {
 						key = {movie}
 						info = {this.props.movies[movie]}
 						editMovie = {this.props.editMovie}
+						deleteMovie = {this.props.deleteMovie}
 					/>
 				))}
 			</div>
