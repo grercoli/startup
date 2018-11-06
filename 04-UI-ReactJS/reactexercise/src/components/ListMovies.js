@@ -11,6 +11,7 @@ class ListMovies extends Component {
 					<Movie 
 						key = {movie}
 						info = {this.props.movies[movie]}
+						editMovie = {this.props.editMovie}
 					/>
 				))}
 			</div>

@@ -20,6 +20,19 @@ class App extends Component {
     })
   }
 
+  editMovie = (editedMovie, id) => {
+    const currentMovies = [...this.state.movies];
+
+    let editedArray = [];
+    editedArray.push(editedMovie);
+
+    const movies = currentMovies.map(obj => editedArray.find(o => o.id === obj.id) || obj);
+
+    this.setState({
+      movies
+    })
+  }
+
   render() {
     return (
       <div>
@@ -34,6 +47,7 @@ class App extends Component {
 
         <ListMovies 
           movies = {this.state.movies}
+          editMovie = {this.editMovie}
         />
 
       </div>
