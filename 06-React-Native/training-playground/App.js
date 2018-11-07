@@ -1,11 +1,11 @@
 import React from 'react';
 import { StyleSheet, Text, View, ScrollView } from 'react-native';
-import Example from './topic2/Example';
+import ExampleThree from './topic2/ExampleThree';
 
 export default class App extends React.Component {
   render() {
     return (
-      <Example />
+      <ExampleThree />
     );
   }
 }
