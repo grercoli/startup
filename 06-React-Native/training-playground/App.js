@@ -9,10 +9,12 @@ export default class App extends React.Component {
   render() {
     return (
       <View style={styles.container}>
+        <ScrollView horizontal>
         <CardOne />
         <CardTwo />
         <CardThree />
         <CardFour />
+        </ScrollView>
       </View>
     );
   }
