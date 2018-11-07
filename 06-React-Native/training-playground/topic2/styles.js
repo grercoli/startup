@@ -3,36 +3,53 @@ import { StyleSheet} from 'react-native';
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    width: 500,
-    height: 500,
+    flexDirection: 'column',
     alignItems: 'flex-start',
     padding: 10,
     backgroundColor: '#26abaf'
   },
-  item1: {
-    width: 100,
-    height: 100,
-    marginBottom: 10,
-    backgroundColor: '#c42f25'
+  articleContainer: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    backgroundColor: '#fff',
+    borderWidth: 1,
+    borderColor: '#000',
+    borderStyle: 'solid',
+    padding: 10
   },
-  item2: {
-    width: 200,
-    height: 100,
-    flexGrow: 1,
-    marginBottom: 10,
-    backgroundColor: '#8d1cd1'
+  articleDescription: {
+    flex: 1
   },
-  item3: {
-	width: 300,
-	height: 100,
-	flexGrow: 2,
-	backgroundColor: '#fff',
-	marginBottom: 50
+  title: {
+    fontWeight: 'bold',
+    fontSize: 14
   },
-  borderStyle: {
-  	borderWidth: 3,
-  	borderColor: '#000',
-  	borderStyle: 'solid'
+  author: {
+    fontWeight: 'bold',
+    fontSize: 12,
+    marginTop: 5,
+    marginBottom: 5
+  },
+  authorColor: {
+    color: 'blue'
+  },
+  plot: {
+    fontSize: 12
+  },
+  socialMedias: {
+    flexDirection: 'row',
+    alignItems: 'flex-start',
+    paddingTop: 5,
+    paddingBottom: 5
+  },
+  socialMediaImg: {
+    width:25,
+    height:25,
+    marginRight: 5
+  },
+  image: {
+    paddingLeft: 5,
+    alignSelf: 'center',
   }
 });
 
