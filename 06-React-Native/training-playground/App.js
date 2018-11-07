@@ -1,13 +1,18 @@
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, View, ScrollView } from 'react-native';
 import CardOne from './components/CardOne';
+import CardTwo from './components/CardTwo';
+import CardThree from './components/CardThree';
+import CardFour from './components/CardFour';
 
 export default class App extends React.Component {
   render() {
     return (
       <View style={styles.container}>
-        <Text>Hello World!</Text>
         <CardOne />
+        <CardTwo />
+        <CardThree />
+        <CardFour />
       </View>
     );
   }
