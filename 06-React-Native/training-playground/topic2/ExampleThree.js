@@ -13,18 +13,21 @@ export default class ExampleThree extends Component {
         backgroundColor: '#26abaf'
       }}>
         <View style={{
-          width: 100,
-          height: 100,
+          flex: 0.5,
+          width: '100%',
+          height: '100%',
           backgroundColor: '#c42f25'
         }} />
         <View style={{
-          width: 100,
-          height: 100,
+          flex: 0.3,
+          width: '100%',
+          height: '100%',
           backgroundColor: '#8d1cd1'
         }} />
         <View style={{
-          width: 100,
-          height: 100,
+          flex: 0.2,
+          width: '100%',
+          height: '100%',
           backgroundColor: '#fff',
         }} />
       </View>
