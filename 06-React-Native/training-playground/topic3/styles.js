@@ -10,6 +10,11 @@ const styles = StyleSheet.create({
   },
   textContainer: {
     flexGrow: 1
+  },
+  button: {
+    alignItems: 'center',
+    backgroundColor: '#DDDDDD',
+    padding: 10
   }
 });
 
