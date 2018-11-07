@@ -28,6 +28,11 @@ const styles = StyleSheet.create({
 	flexGrow: 2,
 	backgroundColor: '#fff',
 	marginBottom: 50
+  },
+  borderStyle: {
+  	borderWidth: 3,
+  	borderColor: '#000',
+  	borderStyle: 'solid'
   }
 });
 
