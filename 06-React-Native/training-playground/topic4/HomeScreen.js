@@ -2,6 +2,7 @@ import React from 'react';
 import { View, Text, StyleSheet } from 'react-native';
 import { createBottomTabNavigator, createStackNavigator } from 'react-navigation';
 import { Ionicons } from '@expo/vector-icons';
+import TouchOpacity from './TouchOpacity';
 import DetailsScreen from './DetailsScreen';
 import Forms2 from './Forms2';
 import Forms3 from './Forms3';
@@ -11,6 +12,7 @@ class HomeScreen extends React.Component {
     return (
       <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
         <Text>Forms Screen</Text>
+        <TouchOpacity type='secondary' name='NEXT' onPress={() => this.props.navigation.navigate('Forms2')}/>
       </View>
     );
   }
