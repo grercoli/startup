@@ -5,7 +5,7 @@ import { Ionicons } from '@expo/vector-icons';
 import TouchOpacity from './TouchOpacity';
 import DetailsScreen from './DetailsScreen';
 import Posts from './Posts';
-import Forms3 from './Forms3';
+import Post from './Post';
 
 class HomeScreen extends React.Component {
   render() {
@@ -21,7 +21,7 @@ class HomeScreen extends React.Component {
 const FormStack = createStackNavigator({
   Forms: HomeScreen,
   Posts: Posts,
-  Forms3: Forms3
+  Post: Post
 });
 
 export default createBottomTabNavigator({

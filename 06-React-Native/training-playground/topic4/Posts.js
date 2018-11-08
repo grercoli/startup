@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text, StyleSheet, FlatList, ActivityIndicator } from 'react-native';
+import { View, Text, StyleSheet, FlatList, ActivityIndicator, TouchableOpacity } from 'react-native';
 import TouchOpacity from './TouchOpacity';
 import styles from './styles';
 
@@ -43,10 +43,13 @@ class Posts extends React.Component {
           data={this.state.dataSource}
           renderItem={({item}) => {
           	return (
-          		<View style={styles.postContent}>
-          			<Text style={styles.postTitle}>{item.title}</Text>
-          			<Text style={styles.postBody}>{item.body}</Text>
-          		</View>
+          		<TouchableOpacity 
+          			onPress={() => this.props.navigation.navigate('Post', {post: item})}>
+	          		<View style={styles.postContent}>
+	          			<Text style={styles.postTitle}>{item.title}</Text>
+	          			<Text style={styles.postBody}>{item.body}</Text>
+	          		</View>
+          		</TouchableOpacity>
           		)}}
           keyExtractor={(item, index) => index.toString()}
         />
