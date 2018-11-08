@@ -6,6 +6,7 @@ import TouchOpacity from './TouchOpacity';
 import DetailsScreen from './DetailsScreen';
 import Posts from './Posts';
 import Post from './Post';
+import Picture from './Picture';
 
 class HomeScreen extends React.Component {
   render() {
@@ -24,9 +25,14 @@ const FormStack = createStackNavigator({
   Post: Post
 });
 
+const CameraStack = createStackNavigator({
+  Camera: DetailsScreen,
+  Picture: Posts
+});
+
 export default createBottomTabNavigator({
   Forms: FormStack,
-  Other: DetailsScreen,
+  Camera: CameraStack,
 },{
     navigationOptions: ({ navigation }) => ({
       tabBarIcon: ({ horizontal, tintColor }) => {
@@ -34,8 +40,8 @@ export default createBottomTabNavigator({
         let iconName;
         if (routeName === 'Forms') {
           iconName = 'ios-list';
-        } else if (routeName === 'Other') {
-          iconName = 'md-information-circle';
+        } else if (routeName === 'Camera') {
+          iconName = 'md-camera';
         }
 
         return <Ionicons name={iconName} size={horizontal ? 20 : 25} color={tintColor} />;
