@@ -1,22 +1,6 @@
 import { StyleSheet} from 'react-native';
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-    padding: 10
-  },
-  textContainer: {
-    flexGrow: 1
-  },
-  alternative: {
-    flexDirection: 'row'
-  },
-  button: {
-    alignItems: 'center',
-    backgroundColor: '#DDD',
-    padding: 10
-  },
   primaryBtn: {
     alignItems: 'center',
     backgroundColor: '#26ABAF',
@@ -35,6 +19,20 @@ const styles = StyleSheet.create({
   },
   disabledBtn: {
     opacity: 0.5
+  },
+  postContent: {
+    borderWidth: 1,
+    borderColor: '#000',
+    borderStyle: 'solid',
+    padding: 10,
+    margin: 5
+  },
+  postTitle: {
+    fontWeight: 'bold',
+    fontSize: 14
+  },
+  postBody: {
+    marginTop: 5
   }
 });
 
