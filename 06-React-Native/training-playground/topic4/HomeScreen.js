@@ -1,8 +1,10 @@
 import React from 'react';
 import { View, Text, StyleSheet } from 'react-native';
-import { createBottomTabNavigator } from 'react-navigation';
+import { createBottomTabNavigator, createStackNavigator } from 'react-navigation';
 import { Ionicons } from '@expo/vector-icons';
 import DetailsScreen from './DetailsScreen';
+import Forms2 from './Forms2';
+import Forms3 from './Forms3';
 
 class HomeScreen extends React.Component {
   render() {
@@ -14,9 +16,15 @@ class HomeScreen extends React.Component {
   }
 }
 
+const FormStack = createStackNavigator({
+  Forms: HomeScreen,
+  Forms2: Forms2,
+  Forms3: Forms3
+});
+
 export default createBottomTabNavigator({
-  Forms: { screen: HomeScreen },
-  Other: { screen: DetailsScreen },
+  Forms: FormStack,
+  Other: DetailsScreen,
 },{
     navigationOptions: ({ navigation }) => ({
       tabBarIcon: ({ horizontal, tintColor }) => {
