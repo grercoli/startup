@@ -33,6 +33,10 @@ const styles = StyleSheet.create({
   },
   postBody: {
     marginTop: 5
+  },
+  activityIndicator: {
+    flex: 1,
+    justifyContent: 'center'
   }
 });
 

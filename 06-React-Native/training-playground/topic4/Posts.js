@@ -1,11 +1,13 @@
 import React from 'react';
-import { View, Text, StyleSheet, FlatList } from 'react-native';
+import { View, Text, StyleSheet, FlatList, ActivityIndicator } from 'react-native';
 import TouchOpacity from './TouchOpacity';
 import styles from './styles';
 
 class Posts extends React.Component {
   
-  state = {};
+  state = {
+  	isLoading: true,
+  };
 
   componentDidMount(){
     return fetch('https://jsonplaceholder.typicode.com/posts')
@@ -14,6 +16,7 @@ class Posts extends React.Component {
 
         this.setState({
           dataSource: responseJson,
+          isLoading: false,
         }, function(){
 
         });
@@ -25,6 +28,15 @@ class Posts extends React.Component {
   }
 
   render() {
+  	
+  	if(this.state.isLoading){
+      return(
+        <View style={styles.activityIndicator}>
+          <ActivityIndicator size='large' color='#00ff00'/>
+        </View>
+      )
+    }
+
     return (
       <View>
         <FlatList
