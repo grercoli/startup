@@ -3,10 +3,10 @@ import { View, Text, StyleSheet } from 'react-native';
 import { createBottomTabNavigator, createStackNavigator } from 'react-navigation';
 import { Ionicons } from '@expo/vector-icons';
 import TouchOpacity from './TouchOpacity';
-import DetailsScreen from './DetailsScreen';
+import CameraScreen from './CameraScreen';
 import Posts from './Posts';
 import Post from './Post';
-import Picture from './Picture';
+import GalleryScreen from './GalleryScreen';
 
 class HomeScreen extends React.Component {
   render() {
@@ -26,8 +26,8 @@ const FormStack = createStackNavigator({
 });
 
 const CameraStack = createStackNavigator({
-  Camera: DetailsScreen,
-  Picture: Posts
+  Camera: CameraScreen,
+  Gallery: GalleryScreen
 });
 
 export default createBottomTabNavigator({
